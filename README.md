@@ -1,8 +1,8 @@
-# FinTrack — Personal Finance & Growth Tracker
+# FinTrack(Name pending) — Personal Finance & Growth Tracker
 
 > Track your budget, savings, and investments in one place — and know exactly what it takes to hit your financial goals.
 
-FinTrack is a full-stack personal finance app that goes beyond simple expense tracking. It combines **budgeting**, **savings**, and **investment tracking** with a built-in **goal forecasting engine** that tells you not just where you stand, but what to do next — how much to save, whether you're on pace, and what happens if your habits change.
+FinTrack(Name Pending) is a full-stack personal finance app that goes beyond simple expense tracking. It combines **budgeting**, **savings**, and **investment tracking** with a built-in **goal forecasting engine** that tells you not just where you stand, but what to do next — how much to save, whether you're on pace, and what happens if your habits change.
 
 ---
 
