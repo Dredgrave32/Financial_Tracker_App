@@ -1,0 +1,111 @@
+# Financial Tracker App — Build Checklist
+
+## 1. Planning & Requirements
+- [ ] Define target user (e.g., individual budgeters, young investors, FIRE-minded users)
+- [ ] Decide monetization model (free, freemium, subscription) — affects feature gating
+- [ ] List supported account types: checking/savings, credit cards, brokerage, crypto, loans
+- [ ] Choose data source strategy: manual entry vs. bank-linking aggregator (Plaid, MX, Finicity, etc.)
+- [ ] Define core currencies/locales to support (single currency MVP vs. multi-currency)
+- [ ] Decide platform order: web first, mobile first, or parallel builds
+
+## 2. Core Feature: Budgeting
+- [ ] Income tracking (recurring + one-off)
+- [ ] Expense categorization (auto-categorize via merchant/rules + manual override)
+- [ ] Custom budget categories and sub-categories
+- [ ] Monthly/weekly budget limits per category with rollover option
+- [ ] Spending alerts (push/email when nearing or exceeding a limit)
+- [ ] Recurring bill detection and reminders
+- [ ] Cash flow view (income vs. expenses over time)
+
+## 3. Core Feature: Savings
+- [ ] Linked savings account balances (auto-sync or manual update)
+- [ ] Sub-accounts / "buckets" for different savings purposes (emergency fund, vacation, etc.)
+- [ ] Automatic savings rules (round-ups, % of income, scheduled transfers)
+- [ ] Interest rate tracking and projected growth on savings balances
+- [ ] Emergency fund target calculator (e.g., 3–6 months of expenses)
+
+## 4. Core Feature: Investing
+- [ ] Portfolio linking (brokerage accounts) or manual holdings entry
+- [ ] Asset allocation breakdown (stocks, bonds, ETFs, crypto, real estate, cash)
+- [ ] Performance tracking (returns by asset, account, and total portfolio)
+- [ ] Benchmark comparison (e.g., vs. S&P 500)
+- [ ] Dividend/interest income tracking
+- [ ] Fee/expense ratio visibility
+- [ ] Risk profile tagging per account or goal
+
+## 5. Core Feature: Goal Setting & Forecasting
+- [ ] Goal creation flow (name, target amount, target date, linked account/category)
+- [ ] Goal types: savings goal, debt payoff, investment target, net worth milestone
+- [ ] Required-contribution calculator (tells user $ amount needed per week/month to hit goal)
+- [ ] "On track / behind / ahead" status indicator per goal, updated automatically
+- [ ] Forecasting engine: project future balances using historical trends + assumed growth/contribution rates
+- [ ] What-if simulator (e.g., "what if I save $50 more/month")
+- [ ] Adjustable assumptions (inflation rate, expected investment return, income changes)
+- [ ] Notifications when a goal falls off track, with suggested corrective action
+
+## 6. Net Worth & Reporting
+- [ ] Aggregated net worth dashboard (assets minus liabilities)
+- [ ] Historical net worth trend chart
+- [ ] Custom date-range reports (monthly, quarterly, yearly)
+- [ ] Exportable reports (CSV/PDF) for taxes or personal records
+- [ ] Debt tracking module (balances, interest rates, payoff timeline)
+
+## 7. Mobile App
+- [ ] Choose framework (native iOS/Android vs. cross-platform: React Native, Flutter)
+- [ ] Biometric login (Face ID/fingerprint) + PIN fallback
+- [ ] Push notifications for alerts, goal status, bill reminders
+- [ ] Offline mode / cached data for viewing without connection
+- [ ] Widget support (quick balance/goal glance on home screen)
+- [ ] App store assets and submission requirements (Apple App Store, Google Play)
+
+## 8. Web App
+- [ ] Choose stack (e.g., React/Next.js frontend, shared backend/API with mobile)
+- [ ] Responsive design for desktop and tablet
+- [ ] Same core feature parity as mobile (budgeting, savings, investing, goals)
+- [ ] CSV/spreadsheet import-export for power users
+- [ ] Browser-based session security (auto-logout, 2FA)
+
+## 9. Backend & Architecture
+- [ ] Centralized API serving both mobile and web clients
+- [ ] Database design for transactions, accounts, goals, users (normalized schema)
+- [ ] Bank-data integration layer (if using Plaid/MX/etc.) with webhook handling for refreshes
+- [ ] Background jobs for nightly balance sync, forecast recalculation, alert generation
+- [ ] Caching layer for dashboard performance (Redis or similar)
+- [ ] Scalable hosting plan (cloud provider, autoscaling for growth)
+
+## 10. Personal Analytics Dashboard (Real-Time User Tracking)
+*This is separate from the end-user-facing app — it's your own internal view into usage.*
+- [ ] Define what to track: active users (DAU/MAU), signups, retention, feature usage, churn
+- [ ] Event tracking instrumentation (e.g., Segment, Mixpanel, Amplitude, or custom event pipeline)
+- [ ] Real-time dashboard (e.g., self-hosted Grafana/Metabase, or a custom admin panel)
+- [ ] Downloadable reports (CSV/PDF export of user metrics on demand)
+- [ ] User funnel tracking (signup → linked account → first goal → retained user)
+- [ ] Alerting for anomalies (sudden drop in active users, spike in errors)
+- [ ] Access control — this dashboard should be restricted to you/admins only, separate login from regular users
+
+## 11. Security & Compliance
+- [ ] Encrypt data at rest and in transit (TLS, AES-256)
+- [ ] Secure storage of bank credentials (never store raw credentials if using an aggregator)
+- [ ] Two-factor authentication for users
+- [ ] Compliance review: data privacy laws (GDPR/CCPA as applicable), financial data regulations
+- [ ] Regular security audits / penetration testing
+- [ ] Clear privacy policy and terms of service
+- [ ] Data deletion / account closure flow (right to be forgotten)
+
+## 12. Testing
+- [ ] Unit tests for forecasting/goal calculation logic (accuracy is critical here)
+- [ ] Integration tests for bank-sync data pipeline
+- [ ] Cross-device testing (iOS, Android, major browsers)
+- [ ] Load testing for backend under concurrent user growth
+- [ ] Beta testing group for real-world feedback before public launch
+
+## 13. Launch & Post-Launch
+- [ ] Onboarding flow (link first account, set first budget/goal in-app)
+- [ ] In-app tutorial or tooltips for first-time users
+- [ ] Feedback channel (in-app or email) for bug reports/feature requests
+- [ ] Versioned release plan (MVP → v1.1 → v2 feature roadmap)
+- [ ] Monitor the personal analytics dashboard post-launch to guide what to build next
+
+---
+
+**Suggested build order for an MVP:** Budgeting + savings tracking → goal setting with basic forecasting → investment tracking → mobile/web parity → personal analytics dashboard. This gets a usable product live before layering in real-time aggregator integrations and advanced forecasting.
