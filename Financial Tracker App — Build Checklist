@@ -1,7 +1,7 @@
 # Financial Tracker App — Build Checklist
 
 ## 1. Planning & Requirements
-- [ ] Define target user (e.g., individual budgeters, young investors, FIRE-minded users)
+- [x] Define target user (e.g., individual budgeters, young investors, FIRE-minded users)
 - [ ] Decide monetization model (free, freemium, subscription) — affects feature gating
 - [ ] List supported account types: checking/savings, credit cards, brokerage, crypto, loans
 - [ ] Choose data source strategy: manual entry vs. bank-linking aggregator (Plaid, MX, Finicity, etc.)
