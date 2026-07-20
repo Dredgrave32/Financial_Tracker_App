@@ -1,0 +1,59 @@
+/* Color pallete:
+            Color              | Hex Code | Description
+Northern Lights Mint | #88CCB9 | Icy, glowing accent for spiritual markings and magical fire.
+Arctic Fjord Blue        | #436A8C  | Deep, calming backdrop representing the freezing northern nights.
+Viking Vermilion        | #D95C3C  | The vibrant, fiery red of the classic Japanese Kitsune's fur.
+Smoky Charcoal         | #2E3440  | Deep contrast to ground the palette and give definition.
+Frost White                | #ECEFF4   | Crisp, clean neutral for underbellies and snowy highlights.
+*/
+body {
+    background-color: #2E3440;
+}
+
+header {
+    border: 2px solid #88CCB9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(136, 204, 185, 0.5);
+    padding: 20px 30px;
+    max-width: fit-content;
+    margin: 40px auto 0;
+    text-align: center;
+}
+
+h1 {
+    color: #D95C3C;
+    margin: 0;
+}
+
+hr {
+    width: 300px;
+    margin: 20px auto;
+    border: none;
+    border-top: 1px solid #88CCB9;
+}
+
+body p {
+    color: #ECEFF4;
+    text-align: center;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+nav a {
+    color: #436A8C;
+    background-color: #ECEFF4;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #88CCB9;
+}
