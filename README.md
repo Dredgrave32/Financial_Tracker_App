@@ -23,12 +23,12 @@ FinTrack(Name Pending) is a full-stack personal finance app that goes beyond sim
 
 | Layer | Technology |
 |---|---|
-| Backend / API | Python (Django / Flask REST API) |
+| Backend / API | Python (Django + Django REST Framework) |
 | Web Frontend | JavaScript, HTML5, CSS |
 | Mobile App | Java (Android) |
 | Database | PostgreSQL |
 | Auth | JWT-based session auth, 2FA |
-| Hosting | TBD (Heroku / Render / AWS) |
+| Hosting | Render (free tier to start) w/ AWS plans in the future |
 
 > Stack is still evolving as the project grows — this table will be updated as decisions are finalized.
 
